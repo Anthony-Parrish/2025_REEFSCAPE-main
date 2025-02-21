@@ -13,6 +13,15 @@ public final class Constants {
   {
     //public static RobotConfig config = new RobotConfig(16, 5);
     
+    public static class IntakeConstants
+    {
+      public static final int kIntakeLeaderID = 24;
+      public static final boolean kIntakeLeaderInversion = false;
+
+      public static final int kIntakeFollowerID = 25;
+      public static final boolean kIntakeFollowerInversion = true;
+    }
+    
     public static class ArmConstants
     {
       public static final int kRightShoulderMotorID = 23;
