@@ -105,11 +105,15 @@ public class SwerveSubsystem extends SubsystemBase {
   private final Field2d fieldLayout = new Field2d();
 
   public SwerveSubsystem() {
-    /*try{
-      RobotConstants.config = RobotConfig.fromGUISettings();
+    
+    RobotConfig config;
+    
+    try{
+      config = RobotConfig.fromGUISettings();
     } catch (Exception e) {
       // Handle exception as needed
       e.printStackTrace();
+      config = new RobotConfig(50, 6.883, null, null);
     }
 
     AutoBuilder.configure(
@@ -121,9 +125,8 @@ public class SwerveSubsystem extends SubsystemBase {
         new PIDConstants(SwerveDriveConstants.kPathTranslation_P, SwerveDriveConstants.kPathTranslation_I, SwerveDriveConstants.kPathTranslation_D), // Translation PID constants
         new PIDConstants(SwerveDriveConstants.kPathRotation_P,SwerveDriveConstants.kPathRotation_I, SwerveDriveConstants.kPathRotation_D) // Rotation PID constants
       ),
-
-      RobotConstants.config,
-      () -> {
+        config,
+        () -> {
           // Boolean supplier that controls when the path will be mirrored for the red alliance
           // This will flip the path being followed to the red side of the field.
           // THE ORIGIN WILL REMAIN ON THE BLUE SIDE
@@ -135,7 +138,7 @@ public class SwerveSubsystem extends SubsystemBase {
           return false;
       },
       this
-    );*/
+    );
 
     pigeon.getConfigurator().apply(new Pigeon2Configuration());
 
